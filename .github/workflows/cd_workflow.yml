@@ -8,7 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: ここを変更
+    environment: clasp
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v3
@@ -75,10 +75,14 @@ jobs:
 
       - name: Build
         run: |
+          pwd
+          ls -la
           npm run build
 
       - name: Push
         run: |
+          cat ~/.clasprc.json
+          cat ~/.clasp.json
           clasp push -f
 
       - name: Set up environment variables for deployment
