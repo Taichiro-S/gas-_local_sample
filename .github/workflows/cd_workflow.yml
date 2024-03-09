@@ -81,6 +81,8 @@ jobs:
 
       - name: Push
         run: |
+          cat ~/.clasprc.json
+          cat ~/.clasp.json
           clasp push -f
 
       - name: Set up environment variables for deployment
